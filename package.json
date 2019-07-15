@@ -1,5 +1,5 @@
 {
-  "name": "@acme/eslint-plugin",
+  "name": "@acmecryptocorp/eslint-plugin",
   "version": "1.0.0",
   "description": "Acme linting rules for ESLint.",
   "keywords": [
