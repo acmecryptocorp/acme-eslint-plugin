@@ -1,0 +1,13 @@
+dist
+node_modules
+flow-typed
+
+coverage
+reports
+
+assets
+temp
+
+stryker.conf.js
+
+scripts/ruleTemplate
