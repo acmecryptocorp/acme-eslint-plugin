@@ -41,8 +41,8 @@
     "eslint": "^5.15.3"
   },
   "devDependencies": {
-    "@acme/eslint-config": "^1.1.0",
-    "@acme/eslint-plugin": "^1.0.0",
+    "@acmecryptocorp/eslint-config": "^1.0.0",
+    "@acmecryptocorp/eslint-plugin": "^1.0.0",
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
     "@babel/node": "^7.5.0",
