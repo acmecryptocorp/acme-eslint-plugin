@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/acmecryptocorp/acme-eslint-plugin.git"
+    "url": "https://github.com/acmecryptocorp/eslint-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/acmecryptocorp/acme-eslint-plugin/issues"
+    "url": "https://github.com/acmecryptocorp/eslint-plugin/issues"
   },
-  "homepage": "https://github.com/acmecryptocorp/acme-eslint-plugin#readme",
+  "homepage": "https://github.com/acmecryptocorp/eslint-plugin#readme",
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {

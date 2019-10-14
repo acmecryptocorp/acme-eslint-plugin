@@ -1,6 +1,6 @@
 ---
 branch: master
-repositoryUrl: git@github.com:acmecryptocorp/acme-eslint-plugin.git
+repositoryUrl: git@github.com:acmecryptocorp/eslint-plugin.git
 tagFormat: v${version}
 plugins:
   - '@semantic-release/commit-analyzer'
