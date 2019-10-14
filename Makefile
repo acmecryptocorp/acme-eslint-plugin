@@ -48,7 +48,7 @@ full-test: lint flow test
 .PHONY: full-test
 
 prettier:
-	yarn prettier-eslint --write "src/**/*.js"
+	yarn prettier --write "src/**/*.js"
 .PHONY: prettier
 
 test-publish: build full-test
