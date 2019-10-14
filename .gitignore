@@ -12,6 +12,7 @@ temp
 
 .env
 .diff
+.npmrc
 
 *.log
 *.tgz
