@@ -6,8 +6,8 @@ env:
 parser: babel-eslint
 
 extends:
-  - airbnb-base
   - '@acmecryptocorp'
+  - '@acmecryptocorp/eslint-config/flow'
   - 'plugin:jest/recommended'
   - 'plugin:jest/style'
 
@@ -23,10 +23,4 @@ overrides:
     rules:
       no-use-before-define: off
       flowtype/no-types-missing-file-annotation: off
-  - files:
-      - 'scripts/**/*.js'
-    rules:
-      '@acmecryptocorp/require-variable-type': off
-    settings:
-      flowtype:
-        onlyFilesWithFlowAnnotation: true
+      unicorn/filename-case: off
