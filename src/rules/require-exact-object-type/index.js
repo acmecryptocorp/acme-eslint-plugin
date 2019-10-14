@@ -24,7 +24,6 @@ import type { RuleBundleType } from '../../types/index.flow';
 
 import getAssertions from './assertions';
 
-
 const ruleName: string = path.basename(__dirname);
 const meta: RuleMetaType = {
   messages: {
@@ -42,13 +41,16 @@ const meta: RuleMetaType = {
 // const doc: DocType = {}; // TODO
 const assertions: TestObjectType = getAssertions(ruleName);
 
-const mustBeExact = (node: BabelNodeObjectTypeAnnotation, parent: BabelNode): boolean =>
-  node.properties.length > 0
-  && !(
-    isDeclareClass(parent)
-    || isDeclareInterface(parent)
-    || isInterfaceDeclaration(parent)
-    || isInterfaceTypeAnnotation(parent)
+const mustBeExact = (
+  node: BabelNodeObjectTypeAnnotation,
+  parent: BabelNode,
+): boolean =>
+  node.properties.length > 0 &&
+  !(
+    isDeclareClass(parent) ||
+    isDeclareInterface(parent) ||
+    isInterfaceDeclaration(parent) ||
+    isInterfaceTypeAnnotation(parent)
   );
 
 const create = (context: ContextType): VisitorType => ({
@@ -89,9 +91,7 @@ const create = (context: ContextType): VisitorType => ({
 
 const ruleObject: RuleObjectType = { meta, create };
 
-export {
-  ruleName, meta, assertions, ruleObject,
-};
+export { ruleName, meta, assertions, ruleObject };
 
 export default ({
   ruleName,

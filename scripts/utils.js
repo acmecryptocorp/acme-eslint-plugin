@@ -1,10 +1,9 @@
 const path = require('path');
 
-
 const capitalize = ([firstLetter, ...restLetters]) =>
   firstLetter.toUpperCase().concat(restLetters.join(''));
 
-const convertKebabCaseToCamelCase = str =>
+const convertKebabCaseToCamelCase = (str) =>
   str
     .split('-')
     .map((item, ind) => (ind === 0 ? item : capitalize(item)))

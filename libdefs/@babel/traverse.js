@@ -11,13 +11,13 @@ declare module '@babel/traverse' {
   };
 
   declare class Path {
-    type: string,
-    parentPath: Path | null,
-    node: BabelNode,
-    traverse: VisitorType => void,
+    type: string;
+    parentPath: Path | null;
+    node: BabelNode;
+    traverse: (VisitorType) => void;
     scope: {|
       bindings: BindingsType,
-    |},
+    |};
   }
 
   declare type PathType = Path;

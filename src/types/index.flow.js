@@ -2,7 +2,6 @@
 
 import type { RuleMetaType, TestObjectType, RuleObjectType } from 'eslint';
 
-
 export type DocType = {|
   description?: string,
   // shortDescription?: string,

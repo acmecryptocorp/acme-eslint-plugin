@@ -1,6 +1,6 @@
 declare module 'eslint' {
   declare export type ContextType = {|
-    options: $ReadOnlyArray<any>, // eslint-disable-line flowtype/no-weak-types
+    options: $ReadOnlyArray<any>,
     getFilename: () => string,
     getAncestors: () => $ReadOnlyArray<BabelNode>,
     report: ({|
@@ -40,15 +40,17 @@ declare module 'eslint' {
     insertTextAfterRange: (RangeType, string) => FixingType,
     insertTextBefore: (BabelNode, string) => FixingType,
     insertTextBeforeRange: (RangeType, string) => FixingType,
-    remove: BabelNode => FixingType,
-    removeRange: RangeType => FixingType,
+    remove: (BabelNode) => FixingType,
+    removeRange: (RangeType) => FixingType,
     replaceText: (BabelNode, string) => FixingType,
     replaceTextRange: (RangeType, string) => FixingType,
   |};
 
-  declare export type FixFunctionType = FixerType => FixingType | $ReadOnlyArray<FixingType>;
+  declare export type FixFunctionType = (FixerType) =>
+    | FixingType
+    | $ReadOnlyArray<FixingType>;
 
-  declare export type CreateFunctionType = ContextType => VisitorType;
+  declare export type CreateFunctionType = (ContextType) => VisitorType;
 
   declare export type RuleObjectType = {|
     meta: RuleMetaType,
@@ -86,8 +88,12 @@ declare module 'eslint' {
   |};
 
   declare export class RuleTester {
-    constructor(opts?: {}): void, // TODO
+    constructor(opts?: {}): void; // TODO
 
-    run(ruleName: string, ruleObject: RuleObjectType, testCasesObject: TestObjectType): void,
+    run(
+      ruleName: string,
+      ruleObject: RuleObjectType,
+      testCasesObject: TestObjectType,
+    ): void;
   }
 }

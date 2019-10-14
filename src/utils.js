@@ -8,9 +8,10 @@ import {
   isMemberExpression,
 } from '@babel/types';
 
-
 const isFunction = (node: ?BabelNode): boolean %checks =>
-  isArrowFunctionExpression(node) || isFunctionExpression(node) || isFunctionDeclaration(node);
+  isArrowFunctionExpression(node) ||
+  isFunctionExpression(node) ||
+  isFunctionDeclaration(node);
 
 const isRequireCall = (node: ?BabelNode): boolean %checks =>
   isCallExpression(node) && node.callee.name === 'require';

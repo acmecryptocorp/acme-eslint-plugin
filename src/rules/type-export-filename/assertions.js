@@ -2,14 +2,17 @@
 
 import type { TestObjectType } from 'eslint';
 
-
 export default (ruleName: string): TestObjectType => ({
   valid: [
     { code: 'export type A = {}', filename: 'types/index.flow.js' },
     { code: 'export interface A {}', filename: 'types/index.types.js' },
     { code: 'export interface A {}', filename: 'index.js', options: [['*']] },
     { code: 'export const a = 1' },
-    { code: 'export type A = {}', filename: '/code/project/index.js', options: [['index.js']] },
+    {
+      code: 'export type A = {}',
+      filename: '/code/project/index.js',
+      options: [['index.js']],
+    },
   ],
   invalid: [
     {

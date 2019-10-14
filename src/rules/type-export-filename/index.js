@@ -16,7 +16,6 @@ import type { RuleBundleType } from '../../types/index.flow';
 
 import getAssertions from './assertions';
 
-
 const ruleName: string = path.basename(__dirname);
 const meta: RuleMetaType = {
   messages: {
@@ -37,13 +36,21 @@ const meta: RuleMetaType = {
 
 const assertions: TestObjectType = getAssertions(ruleName);
 
-const exportIsAllowed = (filename: string, globs: $ReadOnlyArray<string>): boolean =>
-  globs.some((glob: string): boolean => minimatch(filename, glob, { matchBase: true }));
+const exportIsAllowed = (
+  filename: string,
+  globs: $ReadOnlyArray<string>,
+): boolean =>
+  globs.some((glob: string): boolean =>
+    minimatch(filename, glob, { matchBase: true }),
+  );
 
 const create = (context: ContextType): VisitorType => ({
   ExportNamedDeclaration(node: BabelNode) {
     if (isExportNamedDeclaration(node) && node.exportKind === 'type') {
-      const defaultGlobs: [string, string] = ['**/types/**/*.types.js', '**/types/**/*.flow.js'];
+      const defaultGlobs: [string, string] = [
+        '**/types/**/*.types.js',
+        '**/types/**/*.flow.js',
+      ];
 
       const filename: string = context.getFilename();
       const globs: $ReadOnlyArray<string> = context.options[0] || defaultGlobs;
@@ -65,9 +72,7 @@ const create = (context: ContextType): VisitorType => ({
 
 const ruleObject: RuleObjectType = { meta, create };
 
-export {
-  ruleName, meta, assertions, ruleObject,
-};
+export { ruleName, meta, assertions, ruleObject };
 
 export default ({
   ruleName,

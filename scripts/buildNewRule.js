@@ -5,7 +5,6 @@ const path = require('path');
 
 const { pathToRulesDirectory } = require('./utils');
 
-
 const ruleName = process.argv[2];
 
 if (ruleName === undefined) {
@@ -22,7 +21,9 @@ if (!fs.existsSync(ruleDirectoryPath)) {
   fs.mkdirSync(ruleDirectoryPath);
   console.info(`Rule directory created at '${ruleDirectoryRelativePath}'.\n`);
 } else {
-  console.info(`Directory '${ruleDirectoryRelativePath}' exists. Skipping creation.\n`);
+  console.info(
+    `Directory '${ruleDirectoryRelativePath}' exists. Skipping creation.\n`,
+  );
 }
 
 const ruleTemplatePath = path.join(__dirname, 'ruleTemplate');

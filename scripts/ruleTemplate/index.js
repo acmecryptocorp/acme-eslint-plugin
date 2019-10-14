@@ -14,7 +14,6 @@ import type { RuleBundleType } from '../../types/index.flow';
 
 import getAssertions from './assertions';
 
-
 const ruleName: string = path.basename(__dirname);
 const meta: RuleMetaType = {
   messages: {
@@ -37,9 +36,7 @@ const create: * = (context: ContextType): VisitorType => ({});
 
 const ruleObject: RuleObjectType = { meta, create };
 
-export {
-  ruleName, meta, assertions, ruleObject,
-};
+export { ruleName, meta, assertions, ruleObject };
 
 export default ({
   ruleName,
