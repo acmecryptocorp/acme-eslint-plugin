@@ -13,11 +13,19 @@ libdefs
 
 [lints]
 sketchy-null=error
+sketchy-null-bool=off
+unclear-type=warn
+unnecessary-optional-chain=warn
 untyped-type-import=warn
 deprecated-utility=warn
+deprecated-type=warn
 
 [options]
 include_warnings=true
 experimental.const_params=true
+esproposal.export_star_as=enable
+esproposal.optional_chaining=enable
+esproposal.nullish_coalescing=enable
+module.use_strict=true
 
 [strict]
