@@ -1,3 +1,5 @@
+// @flow
+
 declare module '@babel/code-frame' {
   declare export function codeFrameColumns(
     string,

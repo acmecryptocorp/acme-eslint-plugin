@@ -1,8 +1,15 @@
+// @flow
+
 declare module 'eslint' {
   declare export type ContextType = {|
+    // eslint-disable-next-line flowtype/no-weak-types
     options: $ReadOnlyArray<any>,
+    settings: {
+      [string]: mixed,
+    },
     getFilename: () => string,
     getAncestors: () => $ReadOnlyArray<BabelNode>,
+    getAllComments: () => $ReadOnlyArray<BabelNodeComment>,
     report: ({|
       node: BabelNode,
       messageId?: string,
