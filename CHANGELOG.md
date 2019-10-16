@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/acmecryptocorp/eslint-plugin/compare/v1.1.0...v1.1.1) (2019-10-16)
+
+
+### Bug Fixes
+
+* **rules:** remove autofix from `require-explicit-object-exactness` rule ([bd0d75d](https://github.com/acmecryptocorp/eslint-plugin/commit/bd0d75d60bc657cc9a5256ed71db94273003a016))
+
 # [1.1.0](https://github.com/acmecryptocorp/eslint-plugin/compare/v1.0.0...v1.1.0) (2019-10-16)
 
 
