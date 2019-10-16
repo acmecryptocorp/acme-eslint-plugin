@@ -44,7 +44,7 @@ flow:
 	yarn flow check
 .PHONY: flow
 
-full-test: lint flow test
+full-test: generateRuleIndex lint flow test
 .PHONY: full-test
 
 prettier:
