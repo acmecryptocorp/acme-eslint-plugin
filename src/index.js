@@ -1,13 +1,20 @@
 // @flow
 
-import type { RuleObjectType } from 'eslint';
+import type { RuleObjectType, ContextType, VisitorType } from 'eslint';
 
 import ruleBundles from './rules';
+import { shouldSkipCheck } from './utils';
 import type { RuleBundleType } from './types/index.flow';
 
 type RulesIndexerType = {
-  [string]: RuleObjectType,
+  +[string]: RuleObjectType,
 };
+
+const addSkipCheck = (ruleObject: RuleObjectType): RuleObjectType => ({
+  ...ruleObject,
+  create: (context: ContextType): VisitorType =>
+    shouldSkipCheck(context) ? {} : ruleObject.create(context),
+});
 
 const buildExportedRulesObject = (
   rules: $ReadOnlyArray<RuleBundleType>,
@@ -16,10 +23,7 @@ const buildExportedRulesObject = (
     (
       acc: RulesIndexerType,
       { ruleName, ruleObject }: RuleBundleType,
-    ): RulesIndexerType => ({
-      ...acc,
-      [ruleName]: ruleObject,
-    }),
+    ): RulesIndexerType => ({ ...acc, [ruleName]: addSkipCheck(ruleObject) }),
     {},
   );
 
