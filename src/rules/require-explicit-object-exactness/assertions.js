@@ -26,7 +26,6 @@ export default (ruleName: string): TestObjectType => ({
           endColumn: 34,
         },
       ],
-      output: 'type ObjectType = {| num: number |}',
     },
     {
       code: 'type NestedObjectType = {| obj: { num: number  } |}',
@@ -39,7 +38,6 @@ export default (ruleName: string): TestObjectType => ({
           endColumn: 49,
         },
       ],
-      output: 'type NestedObjectType = {| obj: {| num: number  |} |}',
     },
     {
       code: 'const f = (obj: { num: number  }) => {}',
@@ -52,7 +50,6 @@ export default (ruleName: string): TestObjectType => ({
           endColumn: 33,
         },
       ],
-      output: 'const f = (obj: {| num: number  |}) => {}',
     },
     {
       code: 'type ObjectType = { obj: { num: number }, ... }',
@@ -65,7 +62,6 @@ export default (ruleName: string): TestObjectType => ({
           endColumn: 41,
         },
       ],
-      output: 'type ObjectType = { obj: {| num: number |}, ... }',
     },
   ],
 });

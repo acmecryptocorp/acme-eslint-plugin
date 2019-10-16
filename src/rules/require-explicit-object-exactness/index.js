@@ -15,9 +15,6 @@ import type {
   TestObjectType,
   ContextType,
   VisitorType,
-  FixerType,
-  FixingType,
-  RangeType,
 } from 'eslint';
 
 import type { RuleBundleType } from '../../types/index.flow';
@@ -81,15 +78,6 @@ const create = (context: ContextType): VisitorType => ({
       node,
       messageId: ruleName,
       loc: node.loc,
-      fix: (fixer: FixerType): $ReadOnlyArray<FixingType> => {
-        const rangeAfter: RangeType = [node.range[0], node.range[1] - 1];
-        const rangeBefore: RangeType = [node.range[0] + 1, node.range[1]];
-
-        return [
-          fixer.insertTextBeforeRange(rangeBefore, '|'),
-          fixer.insertTextAfterRange(rangeAfter, '|'),
-        ];
-      },
     });
   },
 });
